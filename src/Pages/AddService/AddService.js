@@ -7,7 +7,7 @@ import axios from 'axios';
 const AddService = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/services', data)
+        axios.post('https://shrouded-falls-48196.herokuapp.com/services', data)
             .then(data => {
                 console.log(data)
                 reset();

@@ -6,7 +6,7 @@ import './Services.css';
 const Services = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        axios('http://localhost:5000/services')
+        axios('https://shrouded-falls-48196.herokuapp.com/services')
             .then(data => setServices(data.data))
     }, [])
 

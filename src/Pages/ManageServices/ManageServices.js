@@ -4,11 +4,11 @@ import React, { useEffect, useState } from 'react';
 const ManageServices = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        axios('http://localhost:5000/services')
+        axios('https://shrouded-falls-48196.herokuapp.com/services')
             .then(data => setServices(data.data))
     }, []);
     const handleDelete = id => {
-        axios.delete(`http://localhost:5000/services/${id}`)
+        axios.delete(`https://shrouded-falls-48196.herokuapp.com/services/${id}`)
             .then(data => {
                 if (data.data.deletedCount) {
                     alert('deleted successfully')

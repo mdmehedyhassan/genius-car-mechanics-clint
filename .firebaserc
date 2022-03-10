@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "genius-car-mechanics"
-  }
+    "default": "m-genius-car-mechanic",
+    "n": "m-genius-car-mechanic"
+  },
+  "targets": {}
 }

@@ -32,7 +32,7 @@ const experts = [
 const Experts = () => {
     return (
         <div id="experts" className="container">
-            <h2 className="text-primary mt-5">Our Experts</h2>
+            <h2 className="text-center fw-bold mt-5 text-primary border-bottom border-4 border-primary ">Our Experts</h2>
             <div className="row">
                 {
                     experts.map(expert => <Expert

@@ -8,11 +8,11 @@ const Services = () => {
     useEffect(() => {
         axios('https://shrouded-falls-48196.herokuapp.com/services')
             .then(data => setServices(data.data))
-    }, [])
+    }, []);
 
     return (
         <div id="services">
-            <h2 className="text-primary mt-5">Our services</h2>
+            <h2 className="text-primary mt-5 mb-4 text-center mb-3 border-bottom border-5 border-primary">Our services</h2>
             <div className="service-container">
                 {
                     services.map(service => <Service

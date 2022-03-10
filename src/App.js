@@ -9,11 +9,12 @@ import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import AddService from './Pages/AddService/AddService';
 import ManageServices from './Pages/ManageServices/ManageServices';
+import Footer from './Pages/Shared/Footer/Footer';
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <AuthProvider>
         <Router>
           <Header></Header>
@@ -30,17 +31,18 @@ function App() {
             <PrivateRoute path="/booking/:serviceId">
               <Booking></Booking>
             </PrivateRoute>
-            <Route path="/addService">
+            <PrivateRoute path="/addService">
               <AddService></AddService>
-            </Route>
-            <Route path="/manageServices">
+            </PrivateRoute>
+            <PrivateRoute path="/manageServices">
               <ManageServices/>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
           </Switch>
         </Router>
+        <Footer/>
       </AuthProvider>
     </div>
   );

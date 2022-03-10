@@ -10,19 +10,22 @@ const AddService = () => {
         axios.post('https://shrouded-falls-48196.herokuapp.com/services', data)
             .then(data => {
                 console.log(data)
-                reset();
+                if(data?.data?.insertedId){
+                    alert('Service Added successfully!!!')
+                    reset();
+                }
             })
     };
     
     return (
         <div className="add-service">
-            <h1>this is service</h1>
+            <h1 className="text-primary mt-3 text-center border-bottom border-4 border-primary fw-bold mb-5">Add New service</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("name", { required: true, maxLength: 20 })} placeholder="Name" />
-                <textarea {...register("description")} placeholder="Description" />
-                <input type="number" {...register("price", { required: true, min: 10 })} placeholder="price" />
-                <input {...register("img")} placeholder="image URL" />
-                <input type="submit" />
+                <input {...register("name", { required: true, maxLength: 20 })} placeholder="Name" className="form-control" />
+                <textarea {...register("description", { required: true})} placeholder="Description"  />
+                <input type="number" {...register("price", { required: true, min: 10 })} placeholder="price" className="form-control" />
+                <input {...register("img", { required: true})} placeholder="image URL" className="form-control" />
+                <input type="submit" value="Add Service" className="btn btn-primary"/>
             </form>
         </div>
     );

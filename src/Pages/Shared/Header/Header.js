@@ -24,17 +24,12 @@ const Header = () => {
                     <Nav.Link as={HashLink} to="/home#home"><b className={homePath ? 'text-light' : ''}>Home</b></Nav.Link>
                     <Nav.Link as={HashLink} to="/home#services"><b className={servicesPath ? 'text-light' : ''}>Services</b></Nav.Link>
                     <Nav.Link as={HashLink} to="/home#experts"><b className={expertsPath ? 'text-light' : ''}>Experts</b></Nav.Link>
-                    <Nav.Link>
-                        <Link className={addServicePath ? 'text-light' : ''} to="/addService" style={{ textDecoration: 'none'}}>
+                    <Nav.Link as={Link} className={addServicePath ? 'text-light' : ''} to="/addService" style={{ textDecoration: 'none' }}>
                             <b>Add Service</b>
-                        </Link>
                     </Nav.Link>
-                    <Nav.Link>
-                        <Link className={manageServicesPath ? 'text-light' : ''} to="/manageServices" style={{ textDecoration: 'none' }}>
+                    <Nav.Link as={Link} className={manageServicesPath ? 'text-light' : ''} to="/manageServices" style={{ textDecoration: 'none' }}>
                         <b>Manage Service</b>
-                    </Link>
                     </Nav.Link>
-                    
                     {user?.email ?
                         <Nav.Link><Button onClick={logOut} variant="danger">Logout</Button></Nav.Link>
                         :

@@ -8,6 +8,11 @@ const Services = () => {
     useEffect(() => {
         axios('https://shrouded-falls-48196.herokuapp.com/services')
             .then(data => setServices(data.data))
+            .catch(error => {
+                if(window.confirm('Please click OK or reload this page')){
+                    window.location.reload();
+                }
+            })
     }, []);
 
     return (
